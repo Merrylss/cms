@@ -1,0 +1,264 @@
+{% extends 'base.html' %}
+{% block title %}用户资料修改{% endblock %}
+{% block activity %}{% endblock %}
+{% block right %}{% endblock %}
+{% block content %}
+{% load static %}
+<!--更改登陆用户信息样式-->
+<link rel="stylesheet" href="/static/css/user_change_info.css">
+<!--------------------------------------展示个人资料------------------------------------------->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div>
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+                  <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">个人资料</a></li>
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">修改资料</a></li>
+                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">系统设置</a></li>
+
+                <!--<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>-->
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <form method="post" action="/blog/user_change_info/" enctype="multipart/form-data">
+                        {% csrf_token %}
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object img-circle" src="/static/upload/{{request.session.loginUser.header}}" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h2 class="media-heading">{{request.session.loginUser.nickname}}</h2>
+                            <ul class="list-inline">
+                                <li class="text-center">
+                                    <a href="#">
+                                        <span class="text-my">100</span><br/>
+                                        <span class="text-muted">关注</span>
+                                    </a>
+                                </li>
+                                <li class="text-center">
+                                    <a href="#" class="text-muted">
+                                        <span class="text-my">100</span><br/>
+                                        <span class="text-muted">粉丝</span>
+                                    </a>
+                                </li>
+                                <li class="text-center">
+                                    <a href="#" class="text-muted">
+                                        <span class="text-my">100</span><br/>
+                                        <span class="text-muted">文章</span>
+                                    </a>
+                                </li>
+                                <li class="text-center">
+                                    <span>194323</span><br/>
+                                    <span class="text-muted">字数</span>
+                                </li>
+                                <li class="text-center">
+                                    <span>1234</span><br/>
+                                    <span class="text-muted">收获喜欢</span>
+                                </li>
+                            </ul>
+                            <!--<a href="" class="text-muted change-img">更换头像</a>-->
+                            <div class="form-group">
+                            <input style="opacity: 0; position: absolute;width: 80px; height: 35px;" class="file-button" type="file" name="header" id="header">
+                            <label for="header" >
+                                <input style="width: 80px; height: 35px;" class="file-button" type="button" value="更换头像">
+                            </label>
+                                </div>
+                            {{msg}}
+                        </div>
+                    </div>
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="nickname" class="col-sm-2 control-label">昵称</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" value="{{request.session.loginUser.nickname}}" name="nickname" id="nickname" placeholder="请输入昵称">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="username" class="col-sm-2 control-label">账号</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" value="{{request.session.loginUser.username}}" id="username" placeholder="请输入账号">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 control-label">邮箱</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="email" placeholder="请输入邮箱">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="age" class="col-sm-2 control-label" >年龄</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" name="age" value="{{request.session.loginUser.age}}" id="age" placeholder="请输入年龄">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="col-sm-2 control-label">电话</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="phone" placeholder="电话号码">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender" class="col-sm-2 control-label">性别</label>
+                                <div class="col-sm-8">
+                                    <input type="radio" name="gender" id="gender">男
+                                    <input type="radio" name="gender" id="gender1">女
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender" class="col-sm-2 control-label">感兴趣的</label>
+                                <div class="col-sm-8">
+                                    <input type="checkbox" name="fav" id="fav" value="book">读书
+                                    <input type="checkbox" name="fav" id="fav1" value="game">游戏
+                                    <input type="checkbox" name="fav" id="fav2" value="photo">摄影
+                                    <input type="checkbox" name="fav" id="fav3" value="travel">旅游
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender" class="col-sm-2 control-label">家乡</label>
+                                <div class="col-sm-8 address">
+                                    <span>省区</span>
+                                    <select name="province" id="hometown">
+                                        <option value="--">--请选择--</option>
+                                        <option value="BJ">北京</option>
+                                        <option value="HN">河南</option>
+                                        <option value="SH">上海</option>
+                                        <option value="SC">四川</option>
+                                        <option value="AH">安徽</option>
+                                        <option value="GD">关东</option>
+                                    </select>
+                                    <span>市</span>
+                                    <select name="city" id="city">
+                                        <option value="--">--请选择--</option>
+                                        <option value="ZZ">郑州</option>
+                                        <option value="LY">洛阳</option>
+                                        <option value="KF">开封</option>
+                                        <option value="NY">南阳</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="intro" class="col-sm-2 control-label">个人介绍</label>
+                                <div class="col-sm-8">
+                                    <textarea name="intro" id="intro" cols="30" rows="5">宠辱不惊,看庭前花开花落.去留无意,望天空云卷云舒</textarea>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                        <button type="submit" class="btn btn-danger">修改资料</button>
+                     </div>
+                        </div>
+                        </form>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="profile">...</div>
+                <div role="tabpanel" class="tab-pane" id="messages">
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object img-circle" src="/static/upload/{{request.session.loginUser.header}}" alt="...">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h2 class="media-heading">{{request.session.loginUser.nickname}}</h2>
+                            <ul class="list-inline">
+                                <li class="text-center">
+                                    <a href="#">
+                                        <span class="text-my">100</span><br/>
+                                        <span class="text-muted">关注</span>
+                                    </a>
+                                </li>
+                                <li class="text-center">
+                                    <a href="#" class="text-muted">
+                                        <span class="text-my">100</span><br/>
+                                        <span class="text-muted">粉丝</span>
+                                    </a>
+                                </li>
+                                <li class="text-center">
+                                    <a href="#" class="text-muted">
+                                        <span class="text-my">100</span><br/>
+                                        <span class="text-muted">文章</span>
+                                    </a>
+                                </li>
+                                <li class="text-center">
+                                    <span>194323</span><br/>
+                                    <span class="text-muted">字数</span>
+                                </li>
+                                <li class="text-center">
+                                    <span>1234</span><br/>
+                                    <span class="text-muted">收获喜欢</span>
+                                </li>
+                            </ul>
+                            <!--<a href="" class="text-muted change-img">更换头像</a>-->
+                        </div>
+                        <div class="panel panel-default">
+                              <div class="panel-heading">基本资料</div>
+                              <div class="panel-body show-info">
+                                <ul>
+                                    <li>昵称: <span>{{request.session.loginUser.nickname}}</span></li>
+                                    <li>账号: <span>{{request.session.loginUser.username}}</span></li>
+                                    <li>手机号: <span>1234567</span></li>
+                                    <li>性别: <span>男</span></li>
+                                    <li>地址: <span>中国</span></li>
+                                    <li>手机号: <span>1234567</span></li>
+                                    <li>邮箱: <span>7654@qq.com</span></li>
+                                    <li>个人介绍: <span>一个幽灵，共产主义的幽灵，在欧洲游荡。为了对这个幽灵进行神圣的围剿，旧欧洲的一切势力，教皇和沙皇、梅特涅和基佐、法国的激进派和德国的警察，都联合起来了。
+                                        有哪一个反对党不被它的当政的敌人骂为共产党呢？又有哪一个反对党不拿共产主义这个罪名去回敬更进步的反对党人和自己的反动敌人呢？
+                                        从这一事实中可以得出两个结论：
+                                        共产主义已经被欧洲的一切势力公认为一种势力；
+                                        现在是共产党人向全世界公开说明自己的观点、自己的目的、自己的意图并且拿党自己的宣言来反驳关于共产主义幽灵的神话的时候了。
+                                        为了这个目的，各国共产党人集会于伦敦，拟定了如下的宣言，用英文、法文、德文、意大利文、弗拉芒文和丹麦文公布于世。</span></li>
+                                </ul>
+                              </div>
+                            </div>
+                    </div>
+                </div>
+                <!--<div role="tabpanel" class="tab-pane" id="settings">...</div>-->
+              </div>
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <!--<div class="panel panel-default">-->
+
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>个性签名</h4></div>
+              <br>
+                <p class="text-center">宠辱不惊，看庭前花开花落。</p>
+              <br>
+                <p class="text-center">去留无意，望天空云卷云舒。</p>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>我的文集</h4></div>
+                <ul class="list-group">
+                     <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-italic"></span> 随笔</a></li>
+                    <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-folder-open"></span> 记事本</a></li>
+                    <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-edit"></span> 便签</a></li>
+
+                </ul>
+            </div>
+
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>个人专题</h4></div>
+                <ul class="list-group">
+                     <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-scale"></span> 运动</a></li>
+                    <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-grain"></span> 旅游</a></li>
+                    <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-grain"></span> 旅游</a></li>
+                    <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-headphones"></span> 音乐</a></li>
+                    <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-facetime-video"></span> 摄影</a></li>
+                </ul>
+            </div>
+        </div>
+      <!--</div>-->
+    </div>
+</div>
+
+{% endblock %}
+{% block author %}{% endblock %}

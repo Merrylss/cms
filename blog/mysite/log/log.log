@@ -1,0 +1,995 @@
+INFO "GET /blog/index/ HTTP/1.1" 200 12853
+DEBUG 2018-10-16 08:29:36,917 utils 18072 2808 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:29:36,918 utils 18072 2808 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:29:37,125 utils 18072 2808 (0.003) SHOW FULL TABLES; args=None
+DEBUG 2018-10-16 08:29:37,130 utils 18072 2808 (0.002) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+DEBUG 2018-10-16 08:29:39,639 views 18072 15944 首页运行。。。
+INFO 2018-10-16 08:29:39,666 basehttp 18072 15944 "GET /blog/index/ HTTP/1.1" 200 12853
+DEBUG 2018-10-16 08:33:36,811 utils 15520 15720 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:33:36,812 utils 15520 15720 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:33:37,055 utils 15520 15720 (0.003) SHOW FULL TABLES; args=None
+DEBUG 2018-10-16 08:33:37,061 utils 15520 15720 (0.002) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+DEBUG 2018-10-16 08:33:39,914 views 15520 20320 首页运行。。。
+DEBUG 2018-10-16 08:33:39,928 utils 15520 20320 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:33:39,930 utils 15520 20320 (0.002) SELECT `blog_article`.`id`, `blog_article`.`title`, `blog_article`.`content`, `blog_article`.`publicTime`, `blog_article`.`modifyTime`, `blog_article`.`author_id` FROM `blog_article` ORDER BY `blog_article`.`publicTime` DESC; args=()
+INFO 2018-10-16 08:33:39,949 basehttp 15520 20320 "GET /blog/index/ HTTP/1.1" 200 12853
+DEBUG 2018-10-16 08:33:44,577 views 15520 7808 用户注册。。。
+DEBUG 2018-10-16 08:33:44,581 base 15520 7808 Exception while resolving variable 'n_msg' in template 'blog/reg_user.html'.
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 882, in _resolve_lookup
+    current = current[bit]
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\context.py", line 87, in __getitem__
+    raise KeyError(key)
+KeyError: 'n_msg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 888, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'n_msg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'n_msg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [n_msg] in "[{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'O8faw6d2AeLxCGZL2mfDLYD2T465k8AuA9tXIBJWzVjCq6bxN0WYDIVsLEGqddY2'>, 'request': <WSGIRequest: GET '/blog/reg_user/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x0000029FFF0778C8>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0000029FFF241518>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000029FFF241080>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'msg': '请填写以下数据'}]"
+INFO 2018-10-16 08:33:44,586 basehttp 15520 7808 "GET /blog/reg_user/ HTTP/1.1" 200 14071
+INFO 2018-10-16 08:33:44,647 basehttp 15520 6064 "GET /blog/code/ HTTP/1.1" 200 1334
+DEBUG 2018-10-16 08:34:45,842 utils 15520 13256 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:34:45,842 utils 15520 13256 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:34:45,848 utils 15520 13256 (0.002) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE `blog_user`.`nickname` = '王维'; args=('王维',)
+INFO 2018-10-16 08:34:45,849 basehttp 15520 13256 "POST /blog/%E7%8E%8B%E7%BB%B4/check_nickname/ HTTP/1.1" 200 60
+DEBUG 2018-10-16 08:35:08,623 views 15520 16176 用户注册。。。
+DEBUG 2018-10-16 08:35:08,631 base 15520 16176 Exception while resolving variable 'n_msg' in template 'blog/reg_user.html'.
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\utils\datastructures.py", line 83, in __getitem__
+    list_ = super(MultiValueDict, self).__getitem__(key)
+KeyError: 'gender'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\DjangoWebWorkspace\Work_update2\mysite\blog\views.py", line 101, in reg_user
+    gender = request.POST['gender']
+  File "E:\virtualenv\webenv\lib\site-packages\django\utils\datastructures.py", line 85, in __getitem__
+    raise MultiValueDictKeyError(repr(key))
+django.utils.datastructures.MultiValueDictKeyError: "'gender'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 882, in _resolve_lookup
+    current = current[bit]
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\context.py", line 87, in __getitem__
+    raise KeyError(key)
+KeyError: 'n_msg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 888, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'n_msg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'n_msg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [n_msg] in "[{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'eNAHvMSfordpPYPpToZT3q3ihDqbVtdx0OOuHho9n8LuDo1bE2GeValI9d0wOyB5'>, 'request': <WSGIRequest: POST '/blog/reg_user/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x0000029FFF277BF8>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x0000029FFF255E48>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000029FFF231588>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'msg': '注册失败！！'}]"
+INFO 2018-10-16 08:35:08,637 basehttp 15520 16176 "POST /blog/reg_user/ HTTP/1.1" 200 14065
+INFO 2018-10-16 08:35:08,667 basehttp 15520 15740 "GET /blog/code/ HTTP/1.1" 200 1451
+DEBUG 2018-10-16 08:35:20,159 base 15520 15528 Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\virtualenv\webenv\lib\site-packages\django\urls\resolvers.py", line 392, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern index ^index/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern reg_user ^reg_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern log_user ^log_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern out_user ^out_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern del_user ^del_user/(?P<user_id>\d+)/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern all_user ^all_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern login_success ^login_success/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern show_user ^show_user/(\d+)/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern change_info ^(?P<user_id>\d+)/change_info/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern user_change_info ^user_change_info/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern add_article ^add_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern del_article ^(?P<a_id>\d+)/del_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern update_article ^(?P<a_id>\d+)/update_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern show_article ^(?P<a_id>\d+)/show_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern only_show_article ^(?P<a_id>\d+)/only_show_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern self_all_article ^self_all_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern code ^code/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern check_nickname ^(\w+)/check_nickname/$>], [<RegexURLResolver <module 'DjangoUeditor.urls' from 'E:\\virtualenv\\webenv\\lib\\site-packages\\DjangoUeditor\\urls.py'> (None:None) ^ueditor/>], [<RegexURLResolver <RegexURLPattern list> (xadmin:xadmin) ^xadmin/>]], 'path': 'blog//check_nickname/'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 882, in _resolve_lookup
+    current = current[bit]
+TypeError: 'RegexURLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegexURLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in '<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>'
+DEBUG 2018-10-16 08:35:20,165 base 15520 15528 Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\virtualenv\webenv\lib\site-packages\django\urls\resolvers.py", line 392, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern index ^index/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern reg_user ^reg_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern log_user ^log_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern out_user ^out_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern del_user ^del_user/(?P<user_id>\d+)/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern all_user ^all_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern login_success ^login_success/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern show_user ^show_user/(\d+)/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern change_info ^(?P<user_id>\d+)/change_info/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern user_change_info ^user_change_info/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern add_article ^add_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern del_article ^(?P<a_id>\d+)/del_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern update_article ^(?P<a_id>\d+)/update_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern show_article ^(?P<a_id>\d+)/show_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern only_show_article ^(?P<a_id>\d+)/only_show_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern self_all_article ^self_all_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern code ^code/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern check_nickname ^(\w+)/check_nickname/$>], [<RegexURLResolver <module 'DjangoUeditor.urls' from 'E:\\virtualenv\\webenv\\lib\\site-packages\\DjangoUeditor\\urls.py'> (None:None) ^ueditor/>], [<RegexURLResolver <RegexURLPattern list> (xadmin:xadmin) ^xadmin/>]], 'path': 'blog//check_nickname/'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 882, in _resolve_lookup
+    current = current[bit]
+TypeError: 'RegexURLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegexURLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in "<RegexURLResolver <module 'DjangoUeditor.urls' from 'E:\\\\virtualenv\\\\webenv\\\\lib\\\\site-packages\\\\DjangoUeditor\\\\urls.py'> (None:None) ^ueditor/>"
+DEBUG 2018-10-16 08:35:20,169 base 15520 15528 Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\virtualenv\webenv\lib\site-packages\django\urls\resolvers.py", line 392, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern index ^index/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern reg_user ^reg_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern log_user ^log_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern out_user ^out_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern del_user ^del_user/(?P<user_id>\d+)/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern all_user ^all_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern login_success ^login_success/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern show_user ^show_user/(\d+)/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern change_info ^(?P<user_id>\d+)/change_info/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern user_change_info ^user_change_info/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern add_article ^add_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern del_article ^(?P<a_id>\d+)/del_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern update_article ^(?P<a_id>\d+)/update_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern show_article ^(?P<a_id>\d+)/show_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern only_show_article ^(?P<a_id>\d+)/only_show_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern self_all_article ^self_all_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern code ^code/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern check_nickname ^(\w+)/check_nickname/$>], [<RegexURLResolver <module 'DjangoUeditor.urls' from 'E:\\virtualenv\\webenv\\lib\\site-packages\\DjangoUeditor\\urls.py'> (None:None) ^ueditor/>], [<RegexURLResolver <RegexURLPattern list> (xadmin:xadmin) ^xadmin/>]], 'path': 'blog//check_nickname/'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 882, in _resolve_lookup
+    current = current[bit]
+TypeError: 'RegexURLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegexURLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in '<RegexURLResolver <RegexURLPattern list> (xadmin:xadmin) ^xadmin/>'
+WARNING 2018-10-16 08:35:20,172 base 15520 15528 Not Found: /blog//check_nickname/
+WARNING 2018-10-16 08:35:20,173 basehttp 15520 15528 "POST /blog//check_nickname/ HTTP/1.1" 404 5704
+DEBUG 2018-10-16 08:35:33,165 utils 15520 3020 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:35:33,165 utils 15520 3020 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:35:33,170 utils 15520 3020 (0.001) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE `blog_user`.`nickname` = '王维'; args=('王维',)
+INFO 2018-10-16 08:35:33,171 basehttp 15520 3020 "POST /blog/%E7%8E%8B%E7%BB%B4/check_nickname/ HTTP/1.1" 200 60
+DEBUG 2018-10-16 08:35:53,151 views 15520 20428 用户注册。。。
+DEBUG 2018-10-16 08:35:53,156 utils 15520 20428 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:35:53,157 utils 15520 20428 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:35:53,160 utils 15520 20428 (0.001) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE `blog_user`.`username` = 'wangwei'; args=('wangwei',)
+DEBUG 2018-10-16 08:35:53,165 utils 15520 20428 (0.001) INSERT INTO `blog_user` (`username`, `nickname`, `password`, `age`, `gender`, `born`, `email`, `header`) VALUES ('wangwei', '王维', '891481f16ff3acd537440e9b94ed3135', 22, 0, '2018-10-16 00:35:53.161341', '', 'static/images/headers/9.jpg'); args=['wangwei', '王维', '891481f16ff3acd537440e9b94ed3135', 22, False, '2018-10-16 00:35:53.161341', '', 'static/images/headers/9.jpg']
+INFO 2018-10-16 08:35:53,276 basehttp 15520 20428 "POST /blog/reg_user/ HTTP/1.1" 302 0
+DEBUG 2018-10-16 08:35:53,280 views 15520 18552 用户登录。。。
+INFO 2018-10-16 08:35:53,286 basehttp 15520 18552 "GET /blog/log_user/ HTTP/1.1" 200 11771
+DEBUG 2018-10-16 08:35:56,933 views 15520 20188 用户登录。。。
+DEBUG 2018-10-16 08:35:56,939 utils 15520 20188 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:35:56,939 utils 15520 20188 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:35:56,944 utils 15520 20188 (0.001) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE (`blog_user`.`username` = 'wangwei' AND `blog_user`.`password` = '891481f16ff3acd537440e9b94ed3135'); args=('wangwei', '891481f16ff3acd537440e9b94ed3135')
+INFO 2018-10-16 08:35:56,955 basehttp 15520 20188 "POST /blog/log_user/ HTTP/1.1" 200 11777
+DEBUG 2018-10-16 08:36:00,521 views 15520 9628 用户登录。。。
+DEBUG 2018-10-16 08:36:00,528 utils 15520 9628 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:36:00,529 utils 15520 9628 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:36:00,533 utils 15520 9628 (0.001) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE (`blog_user`.`username` = 'wangwei' AND `blog_user`.`password` = '891481f16ff3acd537440e9b94ed3135'); args=('wangwei', '891481f16ff3acd537440e9b94ed3135')
+INFO 2018-10-16 08:36:00,539 basehttp 15520 9628 "POST /blog/log_user/ HTTP/1.1" 200 12576
+INFO 2018-10-16 08:36:00,575 basehttp 15520 15756 "GET /blog/code/ HTTP/1.1" 200 1412
+DEBUG 2018-10-16 08:36:05,166 views 15520 4824 用户登录。。。
+DEBUG 2018-10-16 08:36:05,171 utils 15520 4824 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:36:05,172 utils 15520 4824 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:36:05,176 utils 15520 4824 (0.001) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE (`blog_user`.`username` = 'wangwei' AND `blog_user`.`password` = '891481f16ff3acd537440e9b94ed3135'); args=('wangwei', '891481f16ff3acd537440e9b94ed3135')
+INFO 2018-10-16 08:36:05,179 basehttp 15520 4824 "POST /blog/log_user/ HTTP/1.1" 302 0
+DEBUG 2018-10-16 08:36:05,203 views 15520 11980 用户登陆成功。。。
+DEBUG 2018-10-16 08:36:05,211 utils 15520 11980 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:36:05,213 utils 15520 11980 (0.001) SELECT `blog_article`.`id`, `blog_article`.`title`, `blog_article`.`content`, `blog_article`.`publicTime`, `blog_article`.`modifyTime`, `blog_article`.`author_id` FROM `blog_article` ORDER BY `blog_article`.`publicTime` DESC; args=()
+INFO 2018-10-16 08:36:05,218 basehttp 15520 11980 "GET /blog/login_success/ HTTP/1.1" 200 16243
+DEBUG 2018-10-16 08:36:08,287 views 15520 15924 添加文章。。。
+DEBUG 2018-10-16 08:36:08,301 utils 15520 15924 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:36:08,302 utils 15520 15924 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:36:08,306 utils 15520 15924 (0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+DEBUG 2018-10-16 08:36:08,307 base 15520 15924 Exception while resolving variable 'nickname' in template 'blog/add_article.html'.
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 882, in _resolve_lookup
+    current = current[bit]
+  File "E:\virtualenv\webenv\lib\site-packages\django\utils\functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'User' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+  File "E:\virtualenv\webenv\lib\site-packages\django\utils\functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+AttributeError: 'User' object has no attribute 'nickname'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'nickname'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [nickname] in 'lss'
+INFO 2018-10-16 08:36:08,338 basehttp 15520 15924 "GET /blog/add_article/ HTTP/1.1" 200 11039
+INFO 2018-10-16 08:36:08,498 basehttp 15520 6892 "GET /ueditor/controller/?imagePathFormat=&filePathFormat=&action=config&&noCache=1539650168495 HTTP/1.1" 200 2171
+DEBUG 2018-10-16 08:36:10,343 views 15520 12404 用户修改个人资料。。。
+DEBUG 2018-10-16 08:36:10,349 utils 15520 12404 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:36:10,349 utils 15520 12404 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:36:10,353 utils 15520 12404 (0.001) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE `blog_user`.`username` = 'wangwei'; args=('wangwei',)
+DEBUG 2018-10-16 08:36:10,359 base 15520 12404 Exception while resolving variable 'msg' in template 'blog/user_change_info.html'.
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 882, in _resolve_lookup
+    current = current[bit]
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\context.py", line 87, in __getitem__
+    raise KeyError(key)
+KeyError: 'msg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 888, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'msg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'msg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [msg] in '[{\'True\': True, \'False\': False, \'None\': None}, {\'csrf_token\': <SimpleLazyObject: \'LIbPsz7KjVsesoo26pmiLaEn2Axs0Eg3xJpCE4DEiC0jgOAOR33DDUWNUa7NTJEB\'>, \'request\': <WSGIRequest: GET \'/blog/user_change_info/\'>, \'user\': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x0000029FFF2C51E0>>, \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x0000029FFF38FEF0>, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000029FFF38FBE0>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'SUCCESS\': 25, \'WARNING\': 30, \'ERROR\': 40}}, {}, {\'block\': <Block Node: content. Contents: [<TextNode: \'\\n\'>, <django.template.defaulttags.LoadNode object at 0x0000029FFF3A20B8>, <TextNode: \'\\n<!--更改登陆用户信息样式-->\\n<link \'>, <django.template.defaulttags.CsrfTokenNode object at 0x0000029FFF3A2080>, <TextNode: \'\\n                    <div\'>, <Variable Node: request.session.loginUser.header>, <TextNode: \'" alt="...">\\n            \'>, <Variable Node: request.session.loginUser.nickname>, <TextNode: \'</h2>\\n                   \'>, <Variable Node: msg>, <TextNode: \'\\n                        \'>, <Variable Node: request.session.loginUser.nickname>, <TextNode: \'" name="nickname" id="nic\'>, <Variable Node: request.session.loginUser.username>, <TextNode: \'" id="username" placehold\'>, <Variable Node: request.session.loginUser.age>, <TextNode: \'" id="age" placeholder="请\'>, <Variable Node: request.session.loginUser.header>, <TextNode: \'" alt="...">\\n            \'>, <Variable Node: request.session.loginUser.nickname>, <TextNode: \'</h2>\\n                   \'>, <Variable Node: request.session.loginUser.nickname>, <TextNode: \'</span></li>\\n            \'>, <Variable Node: request.session.loginUser.username>, <TextNode: \'</span></li>\\n            \'>]>}]'
+INFO 2018-10-16 08:36:10,366 basehttp 15520 12404 "GET /blog/user_change_info/ HTTP/1.1" 200 23509
+INFO 2018-10-16 08:36:10,404 basehttp 15520 16252 "GET /static/css/user_change_info.css HTTP/1.1" 304 0
+INFO 2018-10-16 08:36:10,412 basehttp 15520 13460 "GET /static/upload/static/images/headers/9.jpg HTTP/1.1" 200 13176
+WARNING 2018-10-16 08:36:10,431 basehttp 15520 9000 "GET /static/images/headers/9.jpg HTTP/1.1" 404 1673
+DEBUG 2018-10-16 08:36:11,845 views 15520 20424 展示用户的所有文章。。。
+DEBUG 2018-10-16 08:36:11,852 utils 15520 20424 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:36:11,854 utils 15520 20424 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:36:11,860 utils 15520 20424 (0.001) SELECT `blog_article`.`id`, `blog_article`.`title`, `blog_article`.`content`, `blog_article`.`publicTime`, `blog_article`.`modifyTime`, `blog_article`.`author_id` FROM `blog_article` WHERE `blog_article`.`author_id` = 55 ORDER BY `blog_article`.`publicTime` DESC; args=(55,)
+INFO 2018-10-16 08:36:11,870 basehttp 15520 20424 "GET /blog/self_all_article/ HTTP/1.1" 200 13286
+INFO 2018-10-16 08:36:11,897 basehttp 15520 16668 "GET /static/css/self_all_article.css HTTP/1.1" 304 0
+INFO 2018-10-16 08:36:11,901 basehttp 15520 13432 "GET /static/upload/static/images/headers/9.jpg HTTP/1.1" 304 0
+DEBUG 2018-10-16 08:36:36,671 views 15520 18748 展示用户的所有文章。。。
+DEBUG 2018-10-16 08:36:36,678 utils 15520 18748 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:36:36,679 utils 15520 18748 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:36:36,686 utils 15520 18748 (0.002) SELECT `blog_article`.`id`, `blog_article`.`title`, `blog_article`.`content`, `blog_article`.`publicTime`, `blog_article`.`modifyTime`, `blog_article`.`author_id` FROM `blog_article` WHERE `blog_article`.`author_id` = 55 ORDER BY `blog_article`.`publicTime` DESC; args=(55,)
+INFO 2018-10-16 08:36:36,694 basehttp 15520 18748 "GET /blog/self_all_article/ HTTP/1.1" 200 13286
+INFO 2018-10-16 08:36:36,725 basehttp 15520 5696 "GET /static/upload/static/images/headers/9.jpg HTTP/1.1" 304 0
+DEBUG 2018-10-16 08:36:39,602 views 15520 11672 添加文章。。。
+DEBUG 2018-10-16 08:36:39,616 utils 15520 11672 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:36:39,617 utils 15520 11672 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:36:39,621 utils 15520 11672 (0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+DEBUG 2018-10-16 08:36:39,622 base 15520 11672 Exception while resolving variable 'nickname' in template 'blog/add_article.html'.
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 882, in _resolve_lookup
+    current = current[bit]
+  File "E:\virtualenv\webenv\lib\site-packages\django\utils\functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+TypeError: 'User' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+  File "E:\virtualenv\webenv\lib\site-packages\django\utils\functional.py", line 239, in inner
+    return func(self._wrapped, *args)
+AttributeError: 'User' object has no attribute 'nickname'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'nickname'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [nickname] in 'lss'
+INFO 2018-10-16 08:36:39,625 basehttp 15520 11672 "GET /blog/add_article/ HTTP/1.1" 200 11039
+INFO 2018-10-16 08:36:39,715 basehttp 15520 456 "GET /ueditor/controller/?imagePathFormat=&filePathFormat=&action=config&&noCache=1539650199712 HTTP/1.1" 200 2171
+INFO 2018-10-16 08:37:05,028 basehttp 15520 1348 "GET /static/ueditor/themes/default/dialogbase.css?cache=0.6579962006414064 HTTP/1.1" 200 1685
+INFO 2018-10-16 08:37:12,282 basehttp 15520 14360 "POST /ueditor/controller/?imagePathFormat=&filePathFormat=&action=uploadimage&encode=utf-8 HTTP/1.1" 200 124
+INFO 2018-10-16 08:37:13,232 basehttp 15520 16336 "GET /static/upload/12_20181016083712_175.jpg HTTP/1.1" 200 17561
+DEBUG 2018-10-16 08:37:15,172 views 15520 19552 添加文章。。。
+DEBUG 2018-10-16 08:37:15,175 utils 15520 19552 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:37:15,176 utils 15520 19552 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:37:15,178 utils 15520 19552 (0.001) INSERT INTO `blog_article` (`title`, `content`, `publicTime`, `modifyTime`, `author_id`) VALUES ('王维的文章', '<p>这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，<img src=\"/static/upload/12_20181016083712_175.jpg\" alt=\"12.jpg\"/></p>', '2018-10-16 00:37:15.176647', '2018-10-16 00:37:15.177663', 55); args=['王维的文章', '<p>这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，这是一篇文章，，，，，，<img src="/static/upload/12_20181016083712_175.jpg" alt="12.jpg"/></p>', '2018-10-16 00:37:15.176647', '2018-10-16 00:37:15.177663', 55]
+DEBUG 2018-10-16 08:37:15,300 utils 15520 19552 (0.002) SELECT `blog_article`.`id`, `blog_article`.`title`, `blog_article`.`content`, `blog_article`.`publicTime`, `blog_article`.`modifyTime`, `blog_article`.`author_id` FROM `blog_article` ORDER BY `blog_article`.`publicTime` DESC; args=()
+INFO 2018-10-16 08:37:15,302 basehttp 15520 19552 "POST /blog/add_article/ HTTP/1.1" 200 64
+DEBUG 2018-10-16 08:37:15,322 views 15520 18956 展示用户的所有文章。。。
+DEBUG 2018-10-16 08:37:15,328 utils 15520 18956 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:37:15,330 utils 15520 18956 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:37:15,335 utils 15520 18956 (0.000) SELECT `blog_article`.`id`, `blog_article`.`title`, `blog_article`.`content`, `blog_article`.`publicTime`, `blog_article`.`modifyTime`, `blog_article`.`author_id` FROM `blog_article` WHERE `blog_article`.`author_id` = 55 ORDER BY `blog_article`.`publicTime` DESC; args=(55,)
+DEBUG 2018-10-16 08:37:15,345 utils 15520 18956 (0.000) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE `blog_user`.`id` = 55; args=(55,)
+INFO 2018-10-16 08:37:15,664 basehttp 15520 18956 "GET /blog/self_all_article/ HTTP/1.1" 200 13941
+INFO 2018-10-16 08:37:15,699 basehttp 15520 10236 "GET /static/upload/static/images/headers/9.jpg HTTP/1.1" 304 0
+INFO 2018-10-16 08:37:17,450 basehttp 15520 16032 "GET /blog/72/show_article HTTP/1.1" 301 0
+DEBUG 2018-10-16 08:37:17,454 views 15520 8528 展示单篇文章。。。
+DEBUG 2018-10-16 08:37:17,460 utils 15520 8528 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:37:17,461 utils 15520 8528 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:37:17,466 utils 15520 8528 (0.001) SELECT `blog_article`.`id`, `blog_article`.`title`, `blog_article`.`content`, `blog_article`.`publicTime`, `blog_article`.`modifyTime`, `blog_article`.`author_id` FROM `blog_article` WHERE `blog_article`.`id` = 72; args=(72,)
+DEBUG 2018-10-16 08:37:17,487 utils 15520 8528 (0.001) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE `blog_user`.`id` = 55; args=(55,)
+INFO 2018-10-16 08:37:17,488 basehttp 15520 8528 "GET /blog/72/show_article/ HTTP/1.1" 200 10202
+INFO 2018-10-16 08:37:17,526 basehttp 15520 14536 "GET /static/upload/12_20181016083712_175.jpg HTTP/1.1" 304 0
+DEBUG 2018-10-16 08:37:25,676 views 15520 2660 展示单篇文章。。。
+DEBUG 2018-10-16 08:37:25,680 utils 15520 2660 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:37:25,681 utils 15520 2660 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:37:25,685 utils 15520 2660 (0.001) SELECT `blog_article`.`id`, `blog_article`.`title`, `blog_article`.`content`, `blog_article`.`publicTime`, `blog_article`.`modifyTime`, `blog_article`.`author_id` FROM `blog_article` WHERE `blog_article`.`id` = 72; args=(72,)
+DEBUG 2018-10-16 08:37:25,696 utils 15520 2660 (0.002) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE `blog_user`.`id` = 55; args=(55,)
+INFO 2018-10-16 08:37:25,698 basehttp 15520 2660 "GET /blog/72/show_article/ HTTP/1.1" 200 10202
+INFO 2018-10-16 08:37:25,718 basehttp 15520 8736 "GET /static/upload/12_20181016083712_175.jpg HTTP/1.1" 304 0
+DEBUG 2018-10-16 08:37:43,237 views 15520 16036 用户修改个人资料。。。
+DEBUG 2018-10-16 08:37:43,243 utils 15520 16036 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:37:43,244 utils 15520 16036 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:37:43,247 utils 15520 16036 (0.000) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE `blog_user`.`username` = 'wangwei'; args=('wangwei',)
+DEBUG 2018-10-16 08:37:43,257 base 15520 16036 Exception while resolving variable 'msg' in template 'blog/user_change_info.html'.
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 882, in _resolve_lookup
+    current = current[bit]
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\context.py", line 87, in __getitem__
+    raise KeyError(key)
+KeyError: 'msg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 888, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'msg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'msg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [msg] in '[{\'True\': True, \'False\': False, \'None\': None}, {\'csrf_token\': <SimpleLazyObject: \'qkLDQRqRD9Jr9g7b4G3GUqoBkzxxXHzIclZq2mWLCQhwXGjXPkK1MaG1c97SQMXg\'>, \'request\': <WSGIRequest: GET \'/blog/user_change_info/\'>, \'user\': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x0000029FFC68BC80>>, \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x0000029FFF3A26D8>, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000029FFF3522B0>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'SUCCESS\': 25, \'WARNING\': 30, \'ERROR\': 40}}, {}, {\'block\': <Block Node: content. Contents: [<TextNode: \'\\n\'>, <django.template.defaulttags.LoadNode object at 0x0000029FFF382AC8>, <TextNode: \'\\n<!--更改登陆用户信息样式-->\\n<link \'>, <django.template.defaulttags.CsrfTokenNode object at 0x0000029FFF382780>, <TextNode: \'\\n                    <div\'>, <Variable Node: request.session.loginUser.header>, <TextNode: \'" alt="...">\\n            \'>, <Variable Node: request.session.loginUser.nickname>, <TextNode: \'</h2>\\n                   \'>, <Variable Node: msg>, <TextNode: \'\\n                        \'>, <Variable Node: request.session.loginUser.nickname>, <TextNode: \'" name="nickname" id="nic\'>, <Variable Node: request.session.loginUser.username>, <TextNode: \'" id="username" placehold\'>, <Variable Node: request.session.loginUser.age>, <TextNode: \'" id="age" placeholder="请\'>, <Variable Node: request.session.loginUser.header>, <TextNode: \'" alt="...">\\n            \'>, <Variable Node: request.session.loginUser.nickname>, <TextNode: \'</h2>\\n                   \'>, <Variable Node: request.session.loginUser.nickname>, <TextNode: \'</span></li>\\n            \'>, <Variable Node: request.session.loginUser.username>, <TextNode: \'</span></li>\\n            \'>]>}]'
+INFO 2018-10-16 08:37:43,260 basehttp 15520 16036 "GET /blog/user_change_info/ HTTP/1.1" 200 23509
+INFO 2018-10-16 08:37:43,281 basehttp 15520 9844 "GET /static/upload/static/images/headers/9.jpg HTTP/1.1" 304 0
+WARNING 2018-10-16 08:37:43,288 basehttp 15520 16680 "GET /static/images/headers/9.jpg HTTP/1.1" 404 1673
+DEBUG 2018-10-16 08:38:31,847 views 15520 17880 用户修改个人资料。。。
+DEBUG 2018-10-16 08:38:31,854 utils 15520 17880 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:38:31,855 utils 15520 17880 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:38:31,861 utils 15520 17880 (0.002) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE `blog_user`.`username` = 'wangwei'; args=('wangwei',)
+DEBUG 2018-10-16 08:38:31,867 base 15520 17880 Exception while resolving variable 'msg' in template 'blog/user_change_info.html'.
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 882, in _resolve_lookup
+    current = current[bit]
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\context.py", line 87, in __getitem__
+    raise KeyError(key)
+KeyError: 'msg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 888, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'msg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'msg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [msg] in '[{\'True\': True, \'False\': False, \'None\': None}, {\'csrf_token\': <SimpleLazyObject: \'LkwQ6P2GYrRp7pQt2ck4MIYC77VxE680xlKDikyAX8puVP2fNQ1pEsg2ZHvSxbwy\'>, \'request\': <WSGIRequest: GET \'/blog/user_change_info/\'>, \'user\': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x0000029FFC68B8C8>>, \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x0000029FFF382860>, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0000029FFF3827B8>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'SUCCESS\': 25, \'WARNING\': 30, \'ERROR\': 40}}, {}, {\'block\': <Block Node: content. Contents: [<TextNode: \'\\n\'>, <django.template.defaulttags.LoadNode object at 0x0000029FFF3C6828>, <TextNode: \'\\n<!--更改登陆用户信息样式-->\\n<link \'>, <django.template.defaulttags.CsrfTokenNode object at 0x0000029FFF3C6710>, <TextNode: \'\\n                    <div\'>, <Variable Node: request.session.loginUser.header>, <TextNode: \'" alt="...">\\n            \'>, <Variable Node: request.session.loginUser.nickname>, <TextNode: \'</h2>\\n                   \'>, <Variable Node: msg>, <TextNode: \'\\n                        \'>, <Variable Node: request.session.loginUser.nickname>, <TextNode: \'" name="nickname" id="nic\'>, <Variable Node: request.session.loginUser.username>, <TextNode: \'" id="username" placehold\'>, <Variable Node: request.session.loginUser.age>, <TextNode: \'" id="age" placeholder="请\'>, <Variable Node: request.session.loginUser.header>, <TextNode: \'" alt="...">\\n            \'>, <Variable Node: request.session.loginUser.nickname>, <TextNode: \'</h2>\\n                   \'>, <Variable Node: request.session.loginUser.nickname>, <TextNode: \'</span></li>\\n            \'>, <Variable Node: request.session.loginUser.username>, <TextNode: \'</span></li>\\n            \'>]>}]'
+INFO 2018-10-16 08:38:31,871 basehttp 15520 17880 "GET /blog/user_change_info/ HTTP/1.1" 200 23523
+INFO 2018-10-16 08:38:31,892 basehttp 15520 9724 "GET /static/upload/static/images/headers/9.jpg HTTP/1.1" 304 0
+DEBUG 2018-10-16 08:38:39,859 views 15520 17780 用户登陆成功。。。
+DEBUG 2018-10-16 08:38:39,871 utils 15520 17780 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:38:39,874 utils 15520 17780 (0.002) SELECT `blog_article`.`id`, `blog_article`.`title`, `blog_article`.`content`, `blog_article`.`publicTime`, `blog_article`.`modifyTime`, `blog_article`.`author_id` FROM `blog_article` ORDER BY `blog_article`.`publicTime` DESC; args=()
+INFO 2018-10-16 08:38:39,877 basehttp 15520 17780 "GET /blog/login_success/ HTTP/1.1" 200 16439
+DEBUG 2018-10-16 08:39:20,522 views 15520 9392 首页运行。。。
+INFO 2018-10-16 08:39:20,537 basehttp 15520 9392 "GET /blog/index/ HTTP/1.1" 200 12859
+DEBUG 2018-10-16 08:40:17,696 views 15520 18248 首页运行。。。
+INFO 2018-10-16 08:40:17,708 basehttp 15520 18248 "GET /blog/index/ HTTP/1.1" 200 12859
+DEBUG 2018-10-16 08:41:33,775 utils 12820 7192 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:41:33,776 utils 12820 7192 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:41:34,025 utils 12820 7192 (0.004) SHOW FULL TABLES; args=None
+DEBUG 2018-10-16 08:41:34,032 utils 12820 7192 (0.002) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+DEBUG 2018-10-16 08:41:35,619 views 12820 17696 首页运行。。。
+INFO 2018-10-16 08:41:35,649 basehttp 12820 17696 "GET /blog/index/ HTTP/1.1" 200 12859
+DEBUG 2018-10-16 08:41:38,241 views 12820 17564 用户登录。。。
+INFO 2018-10-16 08:41:38,247 basehttp 12820 17564 "GET /blog/log_user/ HTTP/1.1" 200 11771
+DEBUG 2018-10-16 08:41:39,604 views 12820 18716 用户登录。。。
+DEBUG 2018-10-16 08:41:39,610 utils 12820 18716 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:41:39,612 utils 12820 18716 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:41:39,618 utils 12820 18716 (0.002) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE (`blog_user`.`username` = 'wangwei' AND `blog_user`.`password` = '891481f16ff3acd537440e9b94ed3135'); args=('wangwei', '891481f16ff3acd537440e9b94ed3135')
+INFO 2018-10-16 08:41:39,674 basehttp 12820 18716 "POST /blog/log_user/ HTTP/1.1" 200 11777
+DEBUG 2018-10-16 08:41:40,266 views 12820 10116 用户登录。。。
+DEBUG 2018-10-16 08:41:40,272 utils 12820 10116 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:41:40,273 utils 12820 10116 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:41:40,278 utils 12820 10116 (0.001) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE (`blog_user`.`username` = 'wangwei' AND `blog_user`.`password` = '891481f16ff3acd537440e9b94ed3135'); args=('wangwei', '891481f16ff3acd537440e9b94ed3135')
+INFO 2018-10-16 08:41:40,283 basehttp 12820 10116 "POST /blog/log_user/ HTTP/1.1" 200 12576
+INFO 2018-10-16 08:41:40,329 basehttp 12820 4828 "GET /blog/code/ HTTP/1.1" 200 1842
+DEBUG 2018-10-16 08:41:45,074 views 12820 19364 用户登录。。。
+DEBUG 2018-10-16 08:41:45,079 utils 12820 19364 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:41:45,081 utils 12820 19364 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:41:45,085 utils 12820 19364 (0.001) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE (`blog_user`.`username` = 'wangwei' AND `blog_user`.`password` = '891481f16ff3acd537440e9b94ed3135'); args=('wangwei', '891481f16ff3acd537440e9b94ed3135')
+INFO 2018-10-16 08:41:45,088 basehttp 12820 19364 "POST /blog/log_user/ HTTP/1.1" 302 0
+DEBUG 2018-10-16 08:41:45,092 views 12820 17532 用户登陆成功。。。
+DEBUG 2018-10-16 08:41:45,095 utils 12820 17532 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:41:45,096 utils 12820 17532 (0.000) SELECT COUNT(*) AS `__count` FROM `blog_article`; args=()
+DEBUG 2018-10-16 08:41:45,108 base 12820 17532 Exception while resolving variable 'articles' in template 'blog/login_success.html'.
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 882, in _resolve_lookup
+    current = current[bit]
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\context.py", line 87, in __getitem__
+    raise KeyError(key)
+KeyError: 'articles'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 888, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'articles'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'articles'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [articles] in '[{\'True\': True, \'False\': False, \'None\': None}, {\'csrf_token\': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x000001CD68E47730>>, \'request\': <WSGIRequest: GET \'/blog/login_success/\'>, \'user\': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x000001CD68CA7EA0>>, \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x000001CD68F55400>, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x000001CD68F4E860>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'SUCCESS\': 25, \'WARNING\': 30, \'ERROR\': 40}}, {}, {\'page\': <Page 1 of 2>, \'pageSize\': 10}, {\'block\': <Block Node: content. Contents: [<TextNode: \'\\n<div class="col-md-8">\\n \'>, <For Node: for article in articles, tail_len: 5>, <TextNode: \'\\n                </ul>\\n  \'>, <IfNode>, <TextNode: \'\\n\\n                      \'>, <For Node: for p in page.paginator.page_range, tail_len: 3>, <TextNode: \'\\n\\n                      \'>, <IfNode>, <TextNode: \'\\n                      <l\'>, <Variable Node: page.paginator.num_pages>, <TextNode: \'">\\n                      \'>]>}, {}]'
+INFO 2018-10-16 08:41:45,112 basehttp 12820 17532 "GET /blog/login_success/ HTTP/1.1" 200 14436
+DEBUG 2018-10-16 08:42:18,084 views 12820 14584 首页运行。。。
+DEBUG 2018-10-16 08:42:18,091 utils 12820 14584 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:42:18,094 utils 12820 14584 (0.002) SELECT `blog_article`.`id`, `blog_article`.`title`, `blog_article`.`content`, `blog_article`.`publicTime`, `blog_article`.`modifyTime`, `blog_article`.`author_id` FROM `blog_article` ORDER BY `blog_article`.`publicTime` DESC; args=()
+INFO 2018-10-16 08:42:18,112 basehttp 12820 14584 "GET /blog/index/?pageNow=2 HTTP/1.1" 200 12299
+DEBUG 2018-10-16 08:42:21,109 views 12820 11492 首页运行。。。
+INFO 2018-10-16 08:42:21,121 basehttp 12820 11492 "GET /blog/index/?pageNow=1 HTTP/1.1" 200 12859
+DEBUG 2018-10-16 08:42:22,907 views 12820 11656 首页运行。。。
+INFO 2018-10-16 08:42:22,922 basehttp 12820 11656 "GET /blog/index/?pageNow=1 HTTP/1.1" 200 12859
+DEBUG 2018-10-16 08:42:29,998 views 12820 17220 用户登录。。。
+INFO 2018-10-16 08:42:30,007 basehttp 12820 17220 "GET /blog/log_user/ HTTP/1.1" 200 11771
+DEBUG 2018-10-16 08:42:31,803 views 12820 17008 用户登录。。。
+DEBUG 2018-10-16 08:42:31,809 utils 12820 17008 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:42:31,810 utils 12820 17008 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:42:31,816 utils 12820 17008 (0.001) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE (`blog_user`.`username` = 'wangwei' AND `blog_user`.`password` = '891481f16ff3acd537440e9b94ed3135'); args=('wangwei', '891481f16ff3acd537440e9b94ed3135')
+INFO 2018-10-16 08:42:31,821 basehttp 12820 17008 "POST /blog/log_user/ HTTP/1.1" 200 11777
+DEBUG 2018-10-16 08:42:32,419 views 12820 10952 用户登录。。。
+DEBUG 2018-10-16 08:42:32,424 utils 12820 10952 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:42:32,426 utils 12820 10952 (0.002) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:42:32,431 utils 12820 10952 (0.000) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE (`blog_user`.`username` = 'wangwei' AND `blog_user`.`password` = '891481f16ff3acd537440e9b94ed3135'); args=('wangwei', '891481f16ff3acd537440e9b94ed3135')
+INFO 2018-10-16 08:42:32,437 basehttp 12820 10952 "POST /blog/log_user/ HTTP/1.1" 200 12576
+INFO 2018-10-16 08:42:32,462 basehttp 12820 19912 "GET /blog/code/ HTTP/1.1" 200 1262
+DEBUG 2018-10-16 08:42:37,307 views 12820 18832 用户登录。。。
+DEBUG 2018-10-16 08:42:37,311 utils 12820 18832 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:42:37,314 utils 12820 18832 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:42:37,320 utils 12820 18832 (0.001) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE (`blog_user`.`username` = 'wangwei' AND `blog_user`.`password` = '891481f16ff3acd537440e9b94ed3135'); args=('wangwei', '891481f16ff3acd537440e9b94ed3135')
+INFO 2018-10-16 08:42:37,324 basehttp 12820 18832 "POST /blog/log_user/ HTTP/1.1" 302 0
+DEBUG 2018-10-16 08:42:37,328 views 12820 20100 用户登陆成功。。。
+DEBUG 2018-10-16 08:42:37,331 utils 12820 20100 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:42:37,332 utils 12820 20100 (0.000) SELECT COUNT(*) AS `__count` FROM `blog_article`; args=()
+DEBUG 2018-10-16 08:42:37,341 base 12820 20100 Exception while resolving variable 'articles' in template 'blog/login_success.html'.
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 882, in _resolve_lookup
+    current = current[bit]
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\context.py", line 87, in __getitem__
+    raise KeyError(key)
+KeyError: 'articles'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 888, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(type(current), bit):
+AttributeError: type object 'RequestContext' has no attribute 'articles'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'articles'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [articles] in '[{\'True\': True, \'False\': False, \'None\': None}, {\'csrf_token\': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x000001CD68F71D90>>, \'request\': <WSGIRequest: GET \'/blog/login_success/\'>, \'user\': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x000001CD68F91268>>, \'perms\': <django.contrib.auth.context_processors.PermWrapper object at 0x000001CD68F9F390>, \'messages\': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x000001CD68F988D0>, \'DEFAULT_MESSAGE_LEVELS\': {\'DEBUG\': 10, \'INFO\': 20, \'SUCCESS\': 25, \'WARNING\': 30, \'ERROR\': 40}}, {}, {\'page\': <Page 1 of 2>, \'pageSize\': 10}, {\'block\': <Block Node: content. Contents: [<TextNode: \'\\n<div class="col-md-8">\\n \'>, <For Node: for article in articles, tail_len: 5>, <TextNode: \'\\n                </ul>\\n  \'>, <IfNode>, <TextNode: \'\\n\\n                      \'>, <For Node: for p in page.paginator.page_range, tail_len: 3>, <TextNode: \'\\n\\n                      \'>, <IfNode>, <TextNode: \'\\n                      <l\'>, <Variable Node: page.paginator.num_pages>, <TextNode: \'">\\n                      \'>]>}, {}]'
+INFO 2018-10-16 08:42:37,344 basehttp 12820 20100 "GET /blog/login_success/ HTTP/1.1" 200 14436
+DEBUG 2018-10-16 08:42:41,913 views 12820 18072 首页运行。。。
+INFO 2018-10-16 08:42:41,927 basehttp 12820 18072 "GET /blog/index/?pageNow=2 HTTP/1.1" 200 12299
+DEBUG 2018-10-16 08:43:12,463 views 12820 18464 用户登陆成功。。。
+DEBUG 2018-10-16 08:43:12,467 utils 12820 18464 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:43:12,468 utils 12820 18464 (0.001) SELECT COUNT(*) AS `__count` FROM `blog_article`; args=()
+DEBUG 2018-10-16 08:43:12,476 utils 12820 18464 (0.001) SELECT `blog_article`.`id`, `blog_article`.`title`, `blog_article`.`content`, `blog_article`.`publicTime`, `blog_article`.`modifyTime`, `blog_article`.`author_id` FROM `blog_article` ORDER BY `blog_article`.`publicTime` DESC LIMIT 10; args=()
+INFO 2018-10-16 08:43:12,482 basehttp 12820 18464 "GET /blog/login_success/ HTTP/1.1" 200 16366
+DEBUG 2018-10-16 08:43:16,477 views 12820 724 首页运行。。。
+INFO 2018-10-16 08:43:16,493 basehttp 12820 724 "GET /blog/index/?pageNow=2 HTTP/1.1" 200 12299
+DEBUG 2018-10-16 08:43:18,849 views 12820 12092 首页运行。。。
+INFO 2018-10-16 08:43:18,861 basehttp 12820 12092 "GET /blog/index/?pageNow=2 HTTP/1.1" 200 12299
+DEBUG 2018-10-16 08:43:21,650 views 12820 17856 首页运行。。。
+INFO 2018-10-16 08:43:21,661 basehttp 12820 17856 "GET /blog/index/?pageNow=1 HTTP/1.1" 200 12859
+DEBUG 2018-10-16 08:43:23,745 views 12820 6472 首页运行。。。
+ERROR 2018-10-16 08:43:23,751 exception 12820 6472 Internal Server Error: /blog/index/
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DjangoWebWorkspace\Work_update2\mysite\blog\views.py", line 34, in index
+    pageNow = int(request.GET.get("pageNow", 1))
+ValueError: invalid literal for int() with base 10: '<Page 1 of 2>'
+DEBUG 2018-10-16 08:43:23,768 utils 12820 6472 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:43:23,769 utils 12820 6472 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:43:23,773 utils 12820 6472 (0.000) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+ERROR 2018-10-16 08:43:24,035 basehttp 12820 6472 "GET /blog/index/?pageNow=%3CPage%201%20of%202%3E HTTP/1.1" 500 72965
+INFO 2018-10-16 08:43:30,701 basehttp 12820 13132 "GET /static/js/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js HTTP/1.1" 200 37045
+DEBUG 2018-10-16 08:43:32,118 views 12820 16268 首页运行。。。
+ERROR 2018-10-16 08:43:32,130 exception 12820 16268 Internal Server Error: /blog/index/
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DjangoWebWorkspace\Work_update2\mysite\blog\views.py", line 34, in index
+    pageNow = int(request.GET.get("pageNow", 1))
+ValueError: invalid literal for int() with base 10: '<Page 1 of 2>'
+DEBUG 2018-10-16 08:43:32,155 utils 12820 16268 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:43:32,155 utils 12820 16268 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:43:32,161 utils 12820 16268 (0.002) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+ERROR 2018-10-16 08:43:32,196 basehttp 12820 16268 "GET /blog/index/?pageNow=%3CPage%201%20of%202%3E HTTP/1.1" 500 72965
+DEBUG 2018-10-16 08:43:34,817 views 12820 8964 首页运行。。。
+INFO 2018-10-16 08:43:34,828 basehttp 12820 8964 "GET /blog/index/?pageNow=2 HTTP/1.1" 200 12299
+DEBUG 2018-10-16 08:43:37,370 views 12820 2492 首页运行。。。
+INFO 2018-10-16 08:43:37,378 basehttp 12820 2492 "GET /blog/index/?pageNow=2 HTTP/1.1" 200 12299
+DEBUG 2018-10-16 08:43:42,210 views 12820 19620 首页运行。。。
+ERROR 2018-10-16 08:43:42,213 exception 12820 19620 Internal Server Error: /blog/index/
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DjangoWebWorkspace\Work_update2\mysite\blog\views.py", line 34, in index
+    pageNow = int(request.GET.get("pageNow", 1))
+ValueError: invalid literal for int() with base 10: '<Page 2 of 2>'
+DEBUG 2018-10-16 08:43:42,229 utils 12820 19620 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:43:42,229 utils 12820 19620 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:43:42,236 utils 12820 19620 (0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+ERROR 2018-10-16 08:43:42,274 basehttp 12820 19620 "GET /blog/index/?pageNow=%3CPage%202%20of%202%3E HTTP/1.1" 500 72966
+DEBUG 2018-10-16 08:44:22,522 base 12820 10300 Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\virtualenv\webenv\lib\site-packages\django\urls\resolvers.py", line 392, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern index ^index/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern reg_user ^reg_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern log_user ^log_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern out_user ^out_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern del_user ^del_user/(?P<user_id>\d+)/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern all_user ^all_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern login_success ^login_success/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern show_user ^show_user/(\d+)/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern change_info ^(?P<user_id>\d+)/change_info/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern user_change_info ^user_change_info/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern add_article ^add_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern del_article ^(?P<a_id>\d+)/del_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern update_article ^(?P<a_id>\d+)/update_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern show_article ^(?P<a_id>\d+)/show_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern only_show_article ^(?P<a_id>\d+)/only_show_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern self_all_article ^self_all_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern code ^code/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern check_nickname ^(\w+)/check_nickname/$>], [<RegexURLResolver <module 'DjangoUeditor.urls' from 'E:\\virtualenv\\webenv\\lib\\site-packages\\DjangoUeditor\\urls.py'> (None:None) ^ueditor/>], [<RegexURLResolver <RegexURLPattern list> (xadmin:xadmin) ^xadmin/>]], 'path': 'blog/index/index'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 882, in _resolve_lookup
+    current = current[bit]
+TypeError: 'RegexURLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegexURLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in '<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>'
+DEBUG 2018-10-16 08:44:22,529 base 12820 10300 Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\virtualenv\webenv\lib\site-packages\django\urls\resolvers.py", line 392, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern index ^index/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern reg_user ^reg_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern log_user ^log_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern out_user ^out_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern del_user ^del_user/(?P<user_id>\d+)/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern all_user ^all_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern login_success ^login_success/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern show_user ^show_user/(\d+)/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern change_info ^(?P<user_id>\d+)/change_info/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern user_change_info ^user_change_info/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern add_article ^add_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern del_article ^(?P<a_id>\d+)/del_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern update_article ^(?P<a_id>\d+)/update_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern show_article ^(?P<a_id>\d+)/show_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern only_show_article ^(?P<a_id>\d+)/only_show_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern self_all_article ^self_all_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern code ^code/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern check_nickname ^(\w+)/check_nickname/$>], [<RegexURLResolver <module 'DjangoUeditor.urls' from 'E:\\virtualenv\\webenv\\lib\\site-packages\\DjangoUeditor\\urls.py'> (None:None) ^ueditor/>], [<RegexURLResolver <RegexURLPattern list> (xadmin:xadmin) ^xadmin/>]], 'path': 'blog/index/index'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 882, in _resolve_lookup
+    current = current[bit]
+TypeError: 'RegexURLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegexURLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in "<RegexURLResolver <module 'DjangoUeditor.urls' from 'E:\\\\virtualenv\\\\webenv\\\\lib\\\\site-packages\\\\DjangoUeditor\\\\urls.py'> (None:None) ^ueditor/>"
+DEBUG 2018-10-16 08:44:22,543 base 12820 10300 Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 172, in _get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\virtualenv\webenv\lib\site-packages\django\urls\resolvers.py", line 392, in resolve
+    raise Resolver404({'tried': tried, 'path': new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<RegexURLResolver <RegexURLPattern list> (admin:admin) ^admin/>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern index ^index/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern reg_user ^reg_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern log_user ^log_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern out_user ^out_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern del_user ^del_user/(?P<user_id>\d+)/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern all_user ^all_user/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern login_success ^login_success/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern show_user ^show_user/(\d+)/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern change_info ^(?P<user_id>\d+)/change_info/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern user_change_info ^user_change_info/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern add_article ^add_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern del_article ^(?P<a_id>\d+)/del_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern update_article ^(?P<a_id>\d+)/update_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern show_article ^(?P<a_id>\d+)/show_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern only_show_article ^(?P<a_id>\d+)/only_show_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern self_all_article ^self_all_article/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern code ^code/$>], [<RegexURLResolver <module 'blog.urls' from 'E:\\DjangoWebWorkspace\\Work_update2\\mysite\\blog\\urls.py'> (None:blog) ^blog/>, <RegexURLPattern check_nickname ^(\w+)/check_nickname/$>], [<RegexURLResolver <module 'DjangoUeditor.urls' from 'E:\\virtualenv\\webenv\\lib\\site-packages\\DjangoUeditor\\urls.py'> (None:None) ^ueditor/>], [<RegexURLResolver <RegexURLPattern list> (xadmin:xadmin) ^xadmin/>]], 'path': 'blog/index/index'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 882, in _resolve_lookup
+    current = current[bit]
+TypeError: 'RegexURLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'RegexURLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 896, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\template\base.py", line 903, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in '<RegexURLResolver <RegexURLPattern list> (xadmin:xadmin) ^xadmin/>'
+WARNING 2018-10-16 08:44:22,549 base 12820 10300 Not Found: /blog/index/index
+WARNING 2018-10-16 08:44:22,553 basehttp 12820 10300 "GET /blog/index/index HTTP/1.1" 404 5688
+DEBUG 2018-10-16 08:44:26,328 views 12820 5836 首页运行。。。
+INFO 2018-10-16 08:44:26,342 basehttp 12820 5836 "GET /blog/index/ HTTP/1.1" 200 12859
+DEBUG 2018-10-16 08:44:28,641 views 12820 15204 首页运行。。。
+ERROR 2018-10-16 08:44:28,644 exception 12820 15204 Internal Server Error: /blog/index/
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DjangoWebWorkspace\Work_update2\mysite\blog\views.py", line 34, in index
+    pageNow = int(request.GET.get("pageNow", 1))
+ValueError: invalid literal for int() with base 10: '<Page 1 of 2>'
+DEBUG 2018-10-16 08:44:28,671 utils 12820 15204 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:44:28,672 utils 12820 15204 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:44:28,678 utils 12820 15204 (0.002) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+ERROR 2018-10-16 08:44:28,712 basehttp 12820 15204 "GET /blog/index/?pageNow=%3CPage%201%20of%202%3E HTTP/1.1" 500 72956
+DEBUG 2018-10-16 08:45:21,562 views 12820 8744 首页运行。。。
+INFO 2018-10-16 08:45:21,576 basehttp 12820 8744 "GET /blog/index/ HTTP/1.1" 200 12859
+DEBUG 2018-10-16 08:45:23,618 views 12820 17368 首页运行。。。
+INFO 2018-10-16 08:45:23,628 basehttp 12820 17368 "GET /blog/index/?pageNow=2 HTTP/1.1" 200 12299
+DEBUG 2018-10-16 08:45:26,620 views 12820 12688 首页运行。。。
+INFO 2018-10-16 08:45:26,634 basehttp 12820 12688 "GET /blog/index/?pageNow=2 HTTP/1.1" 200 12299
+DEBUG 2018-10-16 08:45:38,133 views 12820 14268 首页运行。。。
+INFO 2018-10-16 08:45:38,143 basehttp 12820 14268 "GET /blog/index/?pageNow=2 HTTP/1.1" 200 12299
+DEBUG 2018-10-16 08:45:40,780 utils 7268 10912 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:45:40,781 utils 7268 10912 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:45:41,020 utils 7268 10912 (0.004) SHOW FULL TABLES; args=None
+DEBUG 2018-10-16 08:45:41,028 utils 7268 10912 (0.003) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+DEBUG 2018-10-16 08:45:43,106 views 7268 20284 首页运行。。。
+INFO 2018-10-16 08:45:43,150 basehttp 7268 20284 "GET /blog/index/ HTTP/1.1" 200 12040
+DEBUG 2018-10-16 08:45:45,418 views 7268 2916 首页运行。。。
+ERROR 2018-10-16 08:45:45,421 exception 7268 2916 Internal Server Error: /blog/index/
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DjangoWebWorkspace\Work_update2\mysite\blog\views.py", line 34, in index
+    pageNow = int(request.GET.get("pageNow", 1))
+ValueError: invalid literal for int() with base 10: '<Page 1 of 17>'
+DEBUG 2018-10-16 08:45:45,474 utils 7268 2916 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:45:45,474 utils 7268 2916 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:45:45,478 utils 7268 2916 (0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+ERROR 2018-10-16 08:45:45,745 basehttp 7268 2916 "GET /blog/index/?pageNow=%3CPage%201%20of%2017%3E HTTP/1.1" 500 72966
+DEBUG 2018-10-16 08:45:54,668 views 7268 12268 首页运行。。。
+INFO 2018-10-16 08:45:54,677 basehttp 7268 12268 "GET /blog/index/?pageNow=2 HTTP/1.1" 200 12523
+DEBUG 2018-10-16 08:45:56,607 views 7268 1524 首页运行。。。
+INFO 2018-10-16 08:45:56,616 basehttp 7268 1524 "GET /blog/index/?pageNow=3 HTTP/1.1" 200 12758
+DEBUG 2018-10-16 08:45:58,477 views 7268 5704 首页运行。。。
+INFO 2018-10-16 08:45:58,486 basehttp 7268 5704 "GET /blog/index/?pageNow=4 HTTP/1.1" 200 12740
+DEBUG 2018-10-16 08:46:00,491 views 7268 5240 首页运行。。。
+INFO 2018-10-16 08:46:00,505 basehttp 7268 5240 "GET /blog/index/?pageNow=5 HTTP/1.1" 200 12743
+DEBUG 2018-10-16 08:46:02,114 views 7268 13992 首页运行。。。
+INFO 2018-10-16 08:46:02,128 basehttp 7268 13992 "GET /blog/index/?pageNow=6 HTTP/1.1" 200 12740
+DEBUG 2018-10-16 08:46:03,782 views 7268 5788 首页运行。。。
+ERROR 2018-10-16 08:46:03,786 exception 7268 5788 Internal Server Error: /blog/index/
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DjangoWebWorkspace\Work_update2\mysite\blog\views.py", line 34, in index
+    pageNow = int(request.GET.get("pageNow", 1))
+ValueError: invalid literal for int() with base 10: '<Page 6 of 17>'
+DEBUG 2018-10-16 08:46:03,802 utils 7268 5788 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:46:03,803 utils 7268 5788 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:46:03,807 utils 7268 5788 (0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+ERROR 2018-10-16 08:46:03,837 basehttp 7268 5788 "GET /blog/index/?pageNow=%3CPage%206%20of%2017%3E HTTP/1.1" 500 72976
+DEBUG 2018-10-16 08:57:35,168 views 7268 14668 首页运行。。。
+DEBUG 2018-10-16 08:57:35,178 utils 7268 14668 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:57:35,181 utils 7268 14668 (0.003) SELECT `blog_article`.`id`, `blog_article`.`title`, `blog_article`.`content`, `blog_article`.`publicTime`, `blog_article`.`modifyTime`, `blog_article`.`author_id` FROM `blog_article` ORDER BY `blog_article`.`publicTime` DESC; args=()
+INFO 2018-10-16 08:57:35,195 basehttp 7268 14668 "GET /blog/index/ HTTP/1.1" 200 12040
+DEBUG 2018-10-16 08:57:38,125 views 7268 18660 首页运行。。。
+ERROR 2018-10-16 08:57:38,129 exception 7268 18660 Internal Server Error: /blog/index/
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DjangoWebWorkspace\Work_update2\mysite\blog\views.py", line 34, in index
+    pageNow = int(request.GET.get("pageNow", 1))
+ValueError: invalid literal for int() with base 10: '<Page 1 of 17>'
+DEBUG 2018-10-16 08:57:38,152 utils 7268 18660 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:57:38,152 utils 7268 18660 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:57:38,158 utils 7268 18660 (0.002) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+ERROR 2018-10-16 08:57:38,189 basehttp 7268 18660 "GET /blog/index/?pageNow=%3CPage%201%20of%2017%3E HTTP/1.1" 500 72966
+DEBUG 2018-10-16 08:57:42,527 views 7268 4728 首页运行。。。
+INFO 2018-10-16 08:57:42,546 basehttp 7268 4728 "GET /blog/index/?pageNow=2 HTTP/1.1" 200 12523
+DEBUG 2018-10-16 08:57:44,410 views 7268 16272 首页运行。。。
+ERROR 2018-10-16 08:57:44,412 exception 7268 16272 Internal Server Error: /blog/index/
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DjangoWebWorkspace\Work_update2\mysite\blog\views.py", line 34, in index
+    pageNow = int(request.GET.get("pageNow", 1))
+ValueError: invalid literal for int() with base 10: '<Page 2 of 17>'
+DEBUG 2018-10-16 08:57:44,427 utils 7268 16272 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:57:44,427 utils 7268 16272 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:57:44,430 utils 7268 16272 (0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+ERROR 2018-10-16 08:57:44,461 basehttp 7268 16272 "GET /blog/index/?pageNow=%3CPage%202%20of%2017%3E HTTP/1.1" 500 72976
+DEBUG 2018-10-16 08:57:47,069 views 7268 4920 首页运行。。。
+ERROR 2018-10-16 08:57:47,072 exception 7268 4920 Internal Server Error: /blog/index/
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DjangoWebWorkspace\Work_update2\mysite\blog\views.py", line 34, in index
+    pageNow = int(request.GET.get("pageNow", 1))
+ValueError: invalid literal for int() with base 10: '<Page 2 of 17>'
+DEBUG 2018-10-16 08:57:47,088 utils 7268 4920 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:57:47,089 utils 7268 4920 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:57:47,094 utils 7268 4920 (0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+ERROR 2018-10-16 08:57:47,128 basehttp 7268 4920 "GET /blog/index/?pageNow=%3CPage%202%20of%2017%3E HTTP/1.1" 500 72975
+DEBUG 2018-10-16 08:57:50,580 views 7268 10336 首页运行。。。
+INFO 2018-10-16 08:57:50,591 basehttp 7268 10336 "GET /blog/index/?pageNow=17 HTTP/1.1" 200 12069
+DEBUG 2018-10-16 08:57:52,223 views 7268 19032 首页运行。。。
+ERROR 2018-10-16 08:57:52,226 exception 7268 19032 Internal Server Error: /blog/index/
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DjangoWebWorkspace\Work_update2\mysite\blog\views.py", line 34, in index
+    pageNow = int(request.GET.get("pageNow", 1))
+ValueError: invalid literal for int() with base 10: '<Page 17 of 17>'
+DEBUG 2018-10-16 08:57:52,243 utils 7268 19032 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:57:52,244 utils 7268 19032 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:57:52,248 utils 7268 19032 (0.001) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+ERROR 2018-10-16 08:57:52,277 basehttp 7268 19032 "GET /blog/index/?pageNow=%3CPage%2017%20of%2017%3E HTTP/1.1" 500 72989
+DEBUG 2018-10-16 08:57:54,804 views 7268 11932 首页运行。。。
+INFO 2018-10-16 08:57:54,818 basehttp 7268 11932 "GET /blog/index/?pageNow=16 HTTP/1.1" 200 12545
+DEBUG 2018-10-16 08:58:16,414 views 7268 9780 首页运行。。。
+ERROR 2018-10-16 08:58:16,418 exception 7268 9780 Internal Server Error: /blog/index/
+Traceback (most recent call last):
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "E:\virtualenv\webenv\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\DjangoWebWorkspace\Work_update2\mysite\blog\views.py", line 34, in index
+    pageNow = int(request.GET.get("pageNow", 1))
+ValueError: invalid literal for int() with base 10: '<Page 16 of 17>'
+DEBUG 2018-10-16 08:58:16,445 utils 7268 9780 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 08:58:16,445 utils 7268 9780 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 08:58:16,459 utils 7268 9780 (0.000) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1; args=(1,)
+ERROR 2018-10-16 08:58:16,486 basehttp 7268 9780 "GET /blog/index/?pageNow=%3CPage%2016%20of%2017%3E HTTP/1.1" 500 72988
+DEBUG 2018-10-16 08:58:48,663 views 7268 10420 首页运行。。。
+INFO 2018-10-16 08:58:48,677 basehttp 7268 10420 "GET /blog/index/ HTTP/1.1" 200 12002
+DEBUG 2018-10-16 08:58:50,879 views 7268 17388 首页运行。。。
+INFO 2018-10-16 08:58:50,897 basehttp 7268 17388 "GET /blog/index/?pageNow=3 HTTP/1.1" 200 12682
+DEBUG 2018-10-16 08:58:52,790 views 7268 19936 首页运行。。。
+INFO 2018-10-16 08:58:52,803 basehttp 7268 19936 "GET /blog/index/?pageNow=5 HTTP/1.1" 200 12667
+DEBUG 2018-10-16 08:58:55,925 views 7268 10560 首页运行。。。
+INFO 2018-10-16 08:58:55,937 basehttp 7268 10560 "GET /blog/index/?pageNow=7 HTTP/1.1" 200 12670
+DEBUG 2018-10-16 08:58:57,743 views 7268 15012 首页运行。。。
+INFO 2018-10-16 08:58:57,756 basehttp 7268 15012 "GET /blog/index/?pageNow=9 HTTP/1.1" 200 12684
+DEBUG 2018-10-16 08:58:59,503 views 7268 12316 首页运行。。。
+INFO 2018-10-16 08:58:59,517 basehttp 7268 12316 "GET /blog/index/?pageNow=11 HTTP/1.1" 200 12677
+DEBUG 2018-10-16 08:59:00,941 views 7268 12408 首页运行。。。
+INFO 2018-10-16 08:59:00,952 basehttp 7268 12408 "GET /blog/index/?pageNow=13 HTTP/1.1" 200 12682
+DEBUG 2018-10-16 09:12:05,795 utils 5204 2184 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 09:12:05,796 utils 5204 2184 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 09:12:06,031 utils 5204 2184 (0.003) SHOW FULL TABLES; args=None
+DEBUG 2018-10-16 09:12:06,036 utils 5204 2184 (0.001) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+DEBUG 2018-10-16 09:12:06,954 views 5204 12392 首页运行。。。
+DEBUG 2018-10-16 09:12:06,973 utils 5204 12392 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 09:12:06,975 utils 5204 12392 (0.002) SELECT `blog_article`.`id`, `blog_article`.`title`, `blog_article`.`content`, `blog_article`.`publicTime`, `blog_article`.`modifyTime`, `blog_article`.`author_id` FROM `blog_article` ORDER BY `blog_article`.`publicTime` DESC; args=()
+INFO 2018-10-16 09:12:07,003 basehttp 5204 12392 "GET /blog/index/ HTTP/1.1" 200 12002
+DEBUG 2018-10-16 09:12:14,660 views 5204 12624 用户登录。。。
+INFO 2018-10-16 09:12:14,667 basehttp 5204 12624 "GET /blog/log_user/ HTTP/1.1" 200 11771
+DEBUG 2018-10-16 09:12:16,528 views 5204 1124 用户登录。。。
+DEBUG 2018-10-16 09:12:16,534 utils 5204 1124 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 09:12:16,534 utils 5204 1124 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 09:12:16,539 utils 5204 1124 (0.001) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE (`blog_user`.`username` = 'wangwei' AND `blog_user`.`password` = '891481f16ff3acd537440e9b94ed3135'); args=('wangwei', '891481f16ff3acd537440e9b94ed3135')
+INFO 2018-10-16 09:12:16,621 basehttp 5204 1124 "POST /blog/log_user/ HTTP/1.1" 302 0
+DEBUG 2018-10-16 09:12:16,625 views 5204 15688 用户登陆成功。。。
+DEBUG 2018-10-16 09:12:16,629 utils 5204 15688 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 09:12:16,630 utils 5204 15688 (0.001) SELECT COUNT(*) AS `__count` FROM `blog_article`; args=()
+DEBUG 2018-10-16 09:12:16,639 utils 5204 15688 (0.001) SELECT `blog_article`.`id`, `blog_article`.`title`, `blog_article`.`content`, `blog_article`.`publicTime`, `blog_article`.`modifyTime`, `blog_article`.`author_id` FROM `blog_article` ORDER BY `blog_article`.`publicTime` DESC LIMIT 1; args=()
+INFO 2018-10-16 09:12:16,642 basehttp 5204 15688 "GET /blog/login_success/ HTTP/1.1" 200 15554
+DEBUG 2018-10-16 09:12:35,183 views 5204 20192 用户登录。。。
+INFO 2018-10-16 09:12:35,191 basehttp 5204 20192 "GET /blog/log_user/ HTTP/1.1" 200 11771
+DEBUG 2018-10-16 09:12:38,868 views 5204 3284 用户登录。。。
+DEBUG 2018-10-16 09:12:38,876 utils 5204 3284 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 09:12:38,878 utils 5204 3284 (0.001) SELECT VERSION(); args=None
+DEBUG 2018-10-16 09:12:38,885 utils 5204 3284 (0.002) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE (`blog_user`.`username` = 'wangwe' AND `blog_user`.`password` = '891481f16ff3acd537440e9b94ed3135'); args=('wangwe', '891481f16ff3acd537440e9b94ed3135')
+INFO 2018-10-16 09:12:38,890 basehttp 5204 3284 "POST /blog/log_user/ HTTP/1.1" 200 11777
+DEBUG 2018-10-16 09:12:39,882 views 5204 18480 用户登录。。。
+DEBUG 2018-10-16 09:12:39,886 utils 5204 18480 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 09:12:39,887 utils 5204 18480 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 09:12:39,895 utils 5204 18480 (0.001) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE (`blog_user`.`username` = 'wangwei' AND `blog_user`.`password` = '891481f16ff3acd537440e9b94ed3135'); args=('wangwei', '891481f16ff3acd537440e9b94ed3135')
+INFO 2018-10-16 09:12:39,898 basehttp 5204 18480 "POST /blog/log_user/ HTTP/1.1" 302 0
+DEBUG 2018-10-16 09:12:39,902 views 5204 3300 用户登陆成功。。。
+DEBUG 2018-10-16 09:12:39,906 utils 5204 3300 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 09:12:39,906 utils 5204 3300 (0.000) SELECT COUNT(*) AS `__count` FROM `blog_article`; args=()
+DEBUG 2018-10-16 09:12:39,913 utils 5204 3300 (0.001) SELECT `blog_article`.`id`, `blog_article`.`title`, `blog_article`.`content`, `blog_article`.`publicTime`, `blog_article`.`modifyTime`, `blog_article`.`author_id` FROM `blog_article` ORDER BY `blog_article`.`publicTime` DESC LIMIT 1; args=()
+INFO 2018-10-16 09:12:39,915 basehttp 5204 3300 "GET /blog/login_success/ HTTP/1.1" 200 15554
+DEBUG 2018-10-16 09:12:50,089 views 5204 15252 用户登录。。。
+DEBUG 2018-10-16 09:12:50,095 utils 5204 15252 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 09:12:50,096 utils 5204 15252 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 09:12:50,104 utils 5204 15252 (0.001) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE (`blog_user`.`username` = 'wangwe' AND `blog_user`.`password` = '891481f16ff3acd537440e9b94ed3135'); args=('wangwe', '891481f16ff3acd537440e9b94ed3135')
+INFO 2018-10-16 09:12:50,111 basehttp 5204 15252 "POST /blog/log_user/ HTTP/1.1" 200 12576
+INFO 2018-10-16 09:12:50,159 basehttp 5204 5064 "GET /blog/code/ HTTP/1.1" 200 1329
+DEBUG 2018-10-16 09:12:56,651 views 5204 8044 用户登录。。。
+DEBUG 2018-10-16 09:12:56,659 utils 5204 8044 (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 09:12:56,661 utils 5204 8044 (0.000) SELECT VERSION(); args=None
+DEBUG 2018-10-16 09:12:56,666 utils 5204 8044 (0.002) SELECT `blog_user`.`id`, `blog_user`.`username`, `blog_user`.`nickname`, `blog_user`.`password`, `blog_user`.`age`, `blog_user`.`gender`, `blog_user`.`born`, `blog_user`.`email`, `blog_user`.`header` FROM `blog_user` WHERE (`blog_user`.`username` = 'wangwei' AND `blog_user`.`password` = '891481f16ff3acd537440e9b94ed3135'); args=('wangwei', '891481f16ff3acd537440e9b94ed3135')
+INFO 2018-10-16 09:12:56,669 basehttp 5204 8044 "POST /blog/log_user/ HTTP/1.1" 302 0
+DEBUG 2018-10-16 09:12:56,674 views 5204 16208 用户登陆成功。。。
+DEBUG 2018-10-16 09:12:56,682 utils 5204 16208 (0.001) SELECT @@SQL_AUTO_IS_NULL; args=None
+DEBUG 2018-10-16 09:12:56,684 utils 5204 16208 (0.000) SELECT COUNT(*) AS `__count` FROM `blog_article`; args=()
+DEBUG 2018-10-16 09:12:56,698 utils 5204 16208 (0.001) SELECT `blog_article`.`id`, `blog_article`.`title`, `blog_article`.`content`, `blog_article`.`publicTime`, `blog_article`.`modifyTime`, `blog_article`.`author_id` FROM `blog_article` ORDER BY `blog_article`.`publicTime` DESC LIMIT 1; args=()
+INFO 2018-10-16 09:12:56,701 basehttp 5204 16208 "GET /blog/login_success/ HTTP/1.1" 200 15554

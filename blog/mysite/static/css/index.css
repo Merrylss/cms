@@ -1,0 +1,20 @@
+/*导航栏固定*/
+body{
+    padding-top: 70px;
+}
+
+/*轮播图模块巨幕调整*/
+.carousel-inner{
+    height: 324px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/*作者头像*/
+.img-author img{
+    width:50px;
+    height: 50px;
+    border: solid 1px #d4d4d4;
+    border-radius: 50%;
+    margin-right: 20px;
+}

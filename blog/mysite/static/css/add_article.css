@@ -1,0 +1,49 @@
+body{
+    padding:100px;
+}
+
+/*编辑器选择设置*/
+
+.choice-editor{
+    height:900px;
+    overflow: hidden;
+}
+
+.table-title{
+    width: 50px;
+    border-bottom: solid 1px #888;
+}
+#tab-title .t{
+    float: left;
+    width: 150px;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    background-color: #d4d4d4;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#tab-title .t:hover{
+    background-color: #9c9c9c;
+}
+#tab-title a{
+    float: right;
+}
+
+#tab-title a{
+    width:100px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    color:black;
+}
+
+.content{
+    margin-top: 100px;
+}
+
+.footer{
+    margin-top: 100px;
+}

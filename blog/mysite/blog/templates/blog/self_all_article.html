@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% block title %}用户文章{% endblock %}
+{% block activity %}{% endblock %}
+{% block right %}{% endblock %}
+{% block content %}
+<!--展示所有文章界面样式-->
+<link rel="stylesheet" href="/static/css/self_all_article.css">
+<!-----------------------------------展示文章--------------------------------->
+<div class="container">
+    <div class="row author-article">
+        <!--文章动态栏-->
+        <div class="col-md-8">
+            <div>
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-map-marker"></span>个人文章</a></li>
+                 <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-globe"></span>好友动态</a></li>
+                <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-bullhorn"></span>与我相关</a></li>
+                <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-fire"></span>热门文章</a></li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                  <div id="recommend">
+<!---------------------------------文章展示---------------------------------->
+  {% for article in articles %}
+  <div class="media">
+  <div class="media-left media-middle">
+    <a href="#">
+      <img class="media-object" src="/static/images/article-img/article2.jpg" alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><a href="/blog/{{article.id}}/show_article">{{article.title|truncatechars:10}}</a></h4>
+    <span>
+        {% autoescape off %}
+        {{article.content |truncatechars:80}}</span>
+        {% endautoescape %}
+      <br>
+      <a href="" class="author-name">{{article.author.nickname}}</a>
+      <span>发表时间：{{article.publicTime}}</span>
+      <!--<span>更新时间：{{article.modifyTime}}</span>-->
+  </div>
+</div>
+  {% empty %}
+   <h2 class="go-publish">您还没有发表文章，请发表文章！<a href="{% url 'blog:add_article' %}">发表文章</a></h2>
+  {% endfor %}
+<!--===================================================-->
+<!--<a href="" class="read-more">阅读更多</a>-->
+                </div>
+                  <!--分页-->
+                <nav aria-label="Page navigation">
+                      <ul class="pagination">
+                        <li>
+                          <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                          <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+
+                </div>
+                <div role="tabpanel" class="tab-pane" id="profile">1.</div>
+                <div role="tabpanel" class="tab-pane" id="messages">.2..</div>
+                <div role="tabpanel" class="tab-pane" id="settings">.3..</div>
+              </div>
+
+            </div>
+        </div>
+        <!--个人信息栏-->
+      <div class="col-md-4">
+            <!--<div class="panel panel-default">-->
+                  <div class="panel panel-default blog-author">
+                <div class="panel-heading">个人信息</div>
+                <div class="panel-body self-action">
+                    <img src="/static/upload/{{request.session.loginUser.header}}" class="img-circle center-block" alt="">
+                    <p class="text-muted text-center"><strong>{{request.session.loginUser.nickname}}</strong></p>
+                    <ul>
+                    <li class="text-center"><a href="#"><span>10</span><br><span>关注</span></a></li>
+                    <li class="text-center"><a href="#"><span>11</span><br><span>粉丝</span></a></li>
+                    <li class="text-center"><a href="#"><span>32</span><br><span>文章</span></a></li>
+                    <li class="text-center"><span>19058</span><br><span>字数</span></li>
+                    <li class="text-center"><span>52</span><br><span>喜欢</span></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>个性签名</h4></div>
+              <br>
+                <p class="text-center">宠辱不惊，看庭前花开花落。</p>
+              <br>
+                <p class="text-center">去留无意，望天空云卷云舒。</p>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>我的文集</h4></div>
+                <ul class="list-group">
+                     <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-italic"></span> 随笔</a></li>
+                    <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-folder-open"></span> 记事本</a></li>
+                    <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-edit"></span> 便签</a></li>
+
+                </ul>
+            </div>
+
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>个人专题</h4></div>
+                <ul class="list-group">
+                     <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-scale"></span> 运动</a></li>
+                    <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-grain"></span> 旅游</a></li>
+                    <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-grain"></span> 旅游</a></li>
+                    <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-headphones"></span> 音乐</a></li>
+                    <li class="list-group-item"><a href="#"><span class="glyphicon glyphicon-facetime-video"></span> 摄影</a></li>
+                </ul>
+            </div>
+        <!--</div>-->
+      </div>
+    </div>
+</div>
+{% endblock %}
+{% block author %}{% endblock %}

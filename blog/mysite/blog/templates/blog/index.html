@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% block title %}博客首页{% endblock %}
+{% block head%}
+<!-----------------------页头导航--------------------------->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">LSS博客</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> 首页 <span class="sr-only">(current)</span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-leaf"></span> 关于博客</a></li>
+
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="输入搜索信息">
+        </div>
+        <button type="submit" class="btn btn-default">搜索</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/blog/reg_user/">注册</a></li>
+        <li><a href="/blog/log_user/">登录</a></li>
+        <li><a href="#">发表文章</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+{% endblock %}
+{% block content %}
+<div class="col-md-8">
+            <div class="page-header">
+              <h3>热门文章推荐 <small>最近一周的热门文章</small></h3>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">最热文章</div>
+                <ul class="list-group">
+                    {% for article in page.object_list %}
+                    <li class="list-group-item"><a href="/blog/{{article.id}}/only_show_article"><i class="label label-success">原创</i>{{article.title}}</a><span class="badge">66</span></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        <div class="row">
+            <nav aria-label="Page navigation" class="col-md-8 col-md-offset-4" >
+                  <ul class="pagination">
+                      <li>
+                      <a href="/blog/index/?pageNow=1">
+                        首页
+                      </a>
+                        </li>
+                      {% if page.has_previous %}
+                        <li>
+                          <a href="/blog/index/?pageNow={{page.previous_page_number}}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                      {% endif %}
+
+                      {% for p in page.paginator.page_range %}
+                        {% if p == page.number %}
+                        <li class="active"><a href="/blog/index/?pageNow={{p}}">{{p}}</a></li>
+                        {% elif p >= page.number|add:'-2' and p <= page.number|add:'2' %}
+                        <li>
+                          <a href="/blog/index/?pageNow={{p}}" >
+                            {{p}}
+                          </a>
+                        </li>
+                      {% endif %}
+
+                      {% endfor %}
+
+                      {% if page.has_next %}
+                    <li>
+                      <a href="/blog/index/?pageNow={{page.next_page_number}}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                      {% endif %}
+                      <li>
+                      <a href="/blog/index/?pageNow={{page.paginator.num_pages}}">
+                        尾页
+                      </a>
+                    </li>
+                  </ul>
+             </nav>
+            </div>
+        </div>
+{% endblock %}

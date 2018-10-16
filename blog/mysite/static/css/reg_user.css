@@ -1,0 +1,51 @@
+.container{
+    margin-top: 100px;
+}
+
+
+.nav-tabs>li{
+    float: left;
+}
+
+.nav-tabs>li:nth-of-type(1){
+    margin-left: 180px;
+    float: left;
+}
+
+.nav-tabs>li:nth-of-type(2){
+    margin-right: 180px;
+    float: right;
+}
+
+.form-group{
+    margin-top: 30px;
+    /*border-bottom:solid 1px #888 ;*/
+}
+
+.col-sm-2{
+    width:100px;
+}
+.address{
+    width:450px;
+}
+
+
+/*.tab-content>.active{*/
+    /*height: 600px;*/
+/*}*/
+
+/*.user-register ul{*/
+    /*width:500px;*/
+    /*list-style: none;*/
+/*}*/
+/*.user-register li{*/
+    /*!*margin-top: 20px;*!*/
+    /*float:left;*/
+    /*text-align: center;*/
+    /*margin-left: 100px;*/
+    /*margin-top: 30px;*/
+/*}*/
+
+/*.btn{*/
+    /*margin-left: 100px;*/
+/*}*/

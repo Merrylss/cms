@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}查看单篇文章{% endblock %}
+{% block activity %}{% endblock %}
+{% block right %}{% endblock %}
+{% block content %}
+{% load static %}
+<!--展示单篇文章样式-->
+<!--<link rel="stylesheet" href="/static/css/show_article.css">-->
+<link rel="stylesheet" href="{% static 'css/show_article.css'%}">
+<!-- ------------------------------------------------------------------------------------->
+<div class="show-content">
+      <div class="panel-body">
+         <div class="row">
+             <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h4 class="text-center">
+                      {{article.title | truncatechars:50}}
+                  </h4>
+                  <a href="/blog/{{article.id}}/update_article">编辑文章</a>
+                  <a href="/blog/{{article.id}}/del_article">删除文章</a>
+                  <div class="text-right">
+                      作者：<a href="">{{article.author.nickname}}</a>
+                          发表时间：{{article.publicTime}}
+                  </div>
+              </div>
+              <div class="panel-body">
+                {{article.content | safe}}
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    </div>
+{% endblock %}
+{% block author %}{% endblock %}

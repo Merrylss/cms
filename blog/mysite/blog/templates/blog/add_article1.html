@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发表文章</title>
+    <link rel="stylesheet" href="/static/js/lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="/static/js/lib/jquery2.2.4/jquery-2.2.4.min.js"></script>
+    <script src="/static/js/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/css/add_article.css">
+
+    <!--引入markdown编辑器依赖文件-->
+    <link rel="stylesheet" href="/static/js/lib/editor.md-master/css/editormd.min.css">
+    <script src="/static/js/lib/editor.md-master/editormd.min.js"></script>
+    <script src="/static/js/app/add_article.js"></script>
+
+    <!--引入富文本框编辑器-->
+    <script src="/static/js/lib/ueditor1_4_3/ueditor.config.js"></script>
+    <script src="/static/js/lib/ueditor1_4_3/ueditor.all.js"></script>
+    <script src="/static/js/lib/ueditor1_4_3/lang/zh-cn/zh-cn.js"></script>
+</head>
+<body>
+<!-----------------------页头导航--------------------------->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">LSS博客</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> 首页 <span class="sr-only">(current)</span></a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-leaf"></span> 关于博客</a></li>
+
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> 消息中心<i class="label label-danger">6</i> <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"><span class="glyphicon glyphicon-inbox"></span> 评论</a></li>
+            <!--<li><a href="#">修改资料</a></li>-->
+            <!--<li><a href="#">修改登陆密码</a></li>-->
+            <li role="separator" class="divider"></li>
+            <li><a href="#"><span class="glyphicon glyphicon-envelope"></span> 私信</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="#"><span class="glyphicon glyphicon-bell"></span> 提醒</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="#"><span class="glyphicon glyphicon-fire"></span> 关注</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#"><span class="glyphicon glyphicon-thumbs-up"></span> 喜欢和赞</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="#"><span class="glyphicon glyphicon-bell"></span> 系统通知</a></li>
+          </ul>
+        </li>
+
+
+      </ul>
+      <form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="输入搜索信息">
+        </div>
+        <button type="submit" class="btn btn-default">搜索</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <!--<li><a href="#">注册</a></li>-->
+        <!--<li><a data-toggle="modal" data-target="#my_login" style="cursor: pointer">登录</a></li>-->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle article-function" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-pencil
+"></span>文章功能 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="./article_publish.html"><span class="glyphicon glyphicon-edit"></span>发表文章</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="./article_single.html"><span class="glyphicon glyphicon-inbox"></span>查看个人文章</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="#"><span class="glyphicon glyphicon-tasks"></span>查看喜欢的文章</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#"><span class="glyphicon glyphicon-star
+glyphicon "></span>查看收藏文章</a></li>
+          </ul>
+        </li>
+
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle self-info" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> 个人中心 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="./author_change_info.html"><span class="glyphicon glyphicon-eye-open"></span> 查看资料</a></li>
+            <!--<li><a href="#">修改资料</a></li>-->
+            <!--<li><a href="#">修改登陆密码</a></li>-->
+            <li role="separator" class="divider"></li>
+            <li><a href="./author_change_info.html"><span class="glyphicon glyphicon-erase"></span> 修改资料</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="./change_password.html"><span class="glyphicon glyphicon-transfer"></span> 修改登陆密码</a></li>
+              <li role="separator" class="divider"></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> 退出</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!----------------------------------选项卡------------------------>
+<div class="container editor">
+  <div class="row">
+    <div class="col-md-12 choice-editor">
+      <div id="tab-title">
+            <div id="t1" class="t">MarkDown编辑器</div>
+            <div id="t2" class="t">富文本编辑器</div>
+            <!--<a href=""><span class="glyphicon glyphicon-share-alt"></span>发布文章</a>-->
+            <!--<a href=""><span class="glyphicon glyphicon-ok"></span>保存</a>-->
+            <a href=""><button type="button" class="btn btn-danger glyphicon glyphicon-share-alt">发布文章</button></a>
+            <a href=""><button type="button" class="btn btn-success glyphicon glyphicon-ok">保存</button></a>
+
+
+      </div>
+      <div class="content">
+          <!--<div class="container">-->
+                <!--<div class="row edit-place">-->
+                  <div class="c1" id="test-editormd">
+                    <!--嵌入markdown编辑器-->
+                      <textarea style="display:none;">[TOC]</textarea>
+                  </div>
+                    <div class="c1">
+                    <!--&lt;!&ndash;嵌入富文本编辑器&ndash;&gt;-->
+                    <script id="editor" type="text/plain" style="width:1024px;height:500px;"></script>
+
+
+                  </div>
+                </div>
+            </div>
+
+
+      </div>
+</div>
+</div>
+</div>
+
+
+
+<!--------------------------------------编辑器--------------------------------------->
+<!--<div class="container">-->
+    <!--<div class="row">-->
+      <!--<div class="col-md-12" id="test-editormd">-->
+        <!--&lt;!&ndash;嵌入markdown编辑器&ndash;&gt;-->
+          <!--<textarea style="display:none;">[TOC]</textarea>-->
+      <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<!----------------------------------------------底部连接-------------------------------------------->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 footer">
+    <ul class="list-inline">
+        <li><a href="#" class="text-muted">友情链接</a></li>
+        <li><a href="#" class="text-muted">友情链接</a></li>
+        <li><a href="#" class="text-muted">友情链接</a></li>
+        <li><a href="#" class="text-muted">友情链接</a></li>
+        <li><a href="#" class="text-muted">友情链接</a></li>
+        <li><a href="#" class="text-muted">友情链接</a></li>
+        <li><a href="#" class="text-muted">友情链接</a></li>
+        <li><a href="#" class="text-muted">友情链接</a></li>
+        <li><a href="#" class="text-muted">友情链接</a></li>
+        <li><a href="#" class="text-muted">友情链接</a></li>
+        <li><a href="#" class="text-muted">友情链接</a></li>
+        <li><a href="#" class="text-muted">友情链接</a></li>
+        <li><a href="#" class="text-muted">友情链接</a></li>
+        <li><a href="#" class="text-muted">友情链接</a></li>
+        <li><a href="#" class="text-muted">友情链接</a></li>
+        <li><a href="#" class="text-muted">友情链接</a></li>
+    </ul>
+    <p class="text-muted">版权所有&copy;盗版必究 公安网站备案编号193293938438348348</p>
+</div>
+  </div>
+  </div>
+
+<!--<script>-->
+         <!--var ue = UE.getEditor('editor');-->
+                      <!--</script>-->
+</body>
+</html>

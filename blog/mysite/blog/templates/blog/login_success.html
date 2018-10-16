@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}登陆成功展示{% endblock %}
+
+{% block content %}
+<div class="col-md-8">
+            <div class="page-header">
+              <h3>热门文章推荐 <small>最近一周的热门文章</small></h3>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">最热文章</div>
+                <ul class="list-group">
+                    {% for article in page %}
+                    <li class="list-group-item"><a href="/blog/{{article.id}}/show_article"><i class="label label-success">原创</i>{{article.title}}</a><span class="badge">66</span></li>
+                    {% endfor %}
+                </ul>
+            </div>
+    <div class="row">
+            <nav aria-label="Page navigation" class="col-md-8 col-md-offset-4" >
+                  <ul class="pagination">
+                      <li>
+                      <a href="/blog/index/?pageNow=1">
+                        首页
+                      </a>
+                        </li>
+                      {% if page.has_previous %}
+                        <li>
+                          <a href="/blog/index/?pageNow={{page.previous_page_number}}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                          </a>
+                        </li>
+                      {% endif %}
+
+                      {% for p in page.paginator.page_range %}
+                        {% if p == page.number %}
+                        <li class="active"><a href="/blog/index/?pageNow={{p}}">{{p}}</a></li>
+                        {% elif p >= page.number|add:'-2' and p <= page.number|add:'2' %}
+                        <li>
+                          <a href="/blog/index/?pageNow={{p}}" >
+                            {{p}}
+                          </a>
+                        </li>
+                      {% endif %}
+
+                      {% endfor %}
+
+                      {% if page.has_next %}
+                    <li>
+                      <a href="/blog/index/?pageNow={{page.next_page_number}}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                      {% endif %}
+                      <li>
+                      <a href="/blog/index/?pageNow={{page.paginator.num_pages}}">
+                        尾页
+                      </a>
+                    </li>
+                  </ul>
+             </nav>
+            </div>
+
+        </div>
+{% endblock %}
